@@ -152,6 +152,11 @@ function processType (item, entities, types) {
     .uniq()
     .value()
 
+  if (type.interfaces) {
+    type.interfaces.forEach((interface) => {
+      linkeditems.push(interface.name);
+    });
+  }
   return linkeditems
 }
 
